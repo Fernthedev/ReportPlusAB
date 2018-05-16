@@ -1,2 +1,5 @@
 # ReportPlus AdvancedBan Addon
 This addon is for the spigot resource made by xBones (https://www.spigotmc.org/resources/report-bungeecord-%E2%98%86-gui-%E2%98%86-discord-%E2%98%86-customizable-%E2%98%86-titles-%E2%98%86-discord-announcements-%E2%98%86-and-more.50455/) This addon allows you to use AdvancedBan for pushing out notifications on discord from advancedban punishments. 
+
+#NOTE:
+THIS PLUGIN ONLY SUPPORTS SPIGOT AT THE MOMENT DUE TO REPORT PLUS'S BUNGEE API NOT MADE YET, UNTIL IT IS ADDED IT WILL BE A SPIGOT ADDON 
