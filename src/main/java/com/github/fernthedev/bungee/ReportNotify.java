@@ -1,19 +1,23 @@
 package com.github.fernthedev.bungee;
 
 import me.leoko.advancedban.bungee.event.PunishmentEvent;
+import me.xbones.reportplus.spigot.punishments.Punishment;
+import me.xbones.reportplus.spigot.punishments.PunishmentType;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
 public class ReportNotify implements Listener {
 
 
-/*    @EventHandler
+    @EventHandler
     public void onReport(PunishmentEvent e) {
         me.leoko.advancedban.utils.Punishment punish = e.getPunishment();
         String punisher = punish.getOperator();
         String punished = punish.getName();
         String reason = punish.getReason();
+
         PunishmentType type = PunishmentType.BAN;
+
         switch (punish.getType()) {
             case BAN:
                 type = PunishmentType.BAN;
@@ -39,7 +43,9 @@ public class ReportNotify implements Listener {
         }
 
         Punishment punishment = new Punishment(punisher, punished, reason, type);
-        ReportPlusAPI.sendPunishment(punishment);
-        ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + type.name());
-    }*/
+
+
+
+        ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + punished);
+    }
 }
