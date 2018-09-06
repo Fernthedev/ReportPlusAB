@@ -2,4 +2,3 @@ name: ReportPlusAB
 main: com.github.fernthedev.bungee.ReportPlusAB
 version: 1.0
 author: FernTheDev
-depend: [ReportPlus, AdvancedBan]
