@@ -1,7 +1,7 @@
 package com.github.fernthedev.spigot;
 
 import me.leoko.advancedban.bukkit.event.PunishmentEvent;
-import me.xbones.reportplus.spigot.api.ReportPlusAPI;
+import me.xbones.reportplus.spigot.ReportPlus;
 import me.xbones.reportplus.spigot.punishments.Punishment;
 import me.xbones.reportplus.spigot.punishments.PunishmentType;
 import org.bukkit.event.EventHandler;
@@ -11,6 +11,7 @@ public class ReportNotify implements Listener {
 
     @EventHandler
     public void onReport(PunishmentEvent e) {
+        ReportPlusAB.getInstance().getLogger().info("Punished called!");
         me.leoko.advancedban.utils.Punishment punish = e.getPunishment();
         String punisher = punish.getOperator();
         String punished = punish.getName();
@@ -46,7 +47,7 @@ public class ReportNotify implements Listener {
         Punishment punishment = new Punishment(punisher, punished, reason, type);
 
 
-        boolean success = ReportPlusAPI.sendPunishment(punishment);
+        boolean success = ReportPlus.getApi().sendPunishment(punishment);
         ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + type.name());
         if (success) {
             ReportPlusAB.getInstance().getLogger().info("Report successful");
