@@ -7,7 +7,7 @@ import me.xbones.reportplus.spigot.punishments.PunishmentType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-public class ReportNotify implements Listener {
+public class AdvancedBanNotify implements Listener {
 
     @EventHandler
     public void onReport(PunishmentEvent e) {

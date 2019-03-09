@@ -4,14 +4,11 @@ import me.leoko.advancedban.bungee.event.PunishmentEvent;
 import me.xbones.reportplus.bungee.ReportPlus;
 import me.xbones.reportplus.bungee.punishments.Punishment;
 import me.xbones.reportplus.bungee.punishments.PunishmentType;
-import net.md_5.bungee.api.ProxyServer;
-import net.md_5.bungee.api.config.ServerInfo;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
 
-public class ReportNotify implements Listener {
+public class AdvancedBanNotify implements Listener {
 
 
     @EventHandler
@@ -56,17 +53,24 @@ public class ReportNotify implements Listener {
                 break;
         }
 
-        ServerInfo serverInfo = ProxyServer.getInstance().getPlayer(punisher).getServer().getInfo();
+
+        /*
+        Server server = ProxyServer.getInstance().getPlayer(punished).getServer();
+        ServerInfo serverInfo;
+
+
+        if(server != null) serverInfo = server.getInfo();
+        else serverInfo = null;
 
         if(serverInfo == null) {
             ProxiedPlayer randomP =ProxyServer.getInstance().getPlayers().iterator().next();
             serverInfo = randomP.getServer().getInfo();
-        }
+        }*/
 
 
-        Punishment punishment = new Punishment(punisher, punished, reason, type,serverInfo);
+        Punishment punishment = new Punishment(punisher, punished, reason, type,null);
 
         ReportPlus.getAPI().sendMessageToAllServers(punishment);
-        ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + punished);
+        ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + type.name());
     }
 }

@@ -1,5 +1,7 @@
 package com.github.fernthedev.spigot;
 
+import com.github.fernthedev.Universal.EnabledClasses;
+import litebans.api.Events;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,9 +18,30 @@ public class ReportPlusAB extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        versionNumber = getDescription().getVersion();
-        getServer().getPluginManager().registerEvents(new ReportNotify(),this);
 
+        // getLogger().info(ChatColor.RED + "BUNGEE IS NOT SUPPORTED AT THIS TIME");
+        if (getServer().getPluginManager().getPlugin("LiteBans") != null)
+            EnabledClasses.whichPunishment = EnabledClasses.WhichBan.LITEBANS;
+        else if (getServer().getPluginManager().getPlugin("AdvancedBan") != null)
+            EnabledClasses.whichPunishment = EnabledClasses.WhichBan.ADVANCEDBAN;
+        else EnabledClasses.whichPunishment = null;
+
+        versionNumber = getDescription().getVersion();
+
+        if (EnabledClasses.whichPunishment == null) {
+            getLogger().warning("No compatible punishment system running, closing");
+            getLogger().warning("Currently supported punishment systems are AdvancedBan and LiteBans.");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        if(EnabledClasses.whichPunishment == EnabledClasses.WhichBan.ADVANCEDBAN) {
+            getServer().getPluginManager().registerEvents(new AdvancedBanNotify(), this);
+        }
+
+        if (EnabledClasses.whichPunishment == EnabledClasses.WhichBan.LITEBANS) {
+            Events.get().register(new LitebansNotify());
+        }
     }
 
 

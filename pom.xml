@@ -81,8 +81,16 @@
             <artifactId>reportplus</artifactId>
             <version>LATEST</version>
             <scope>system</scope>
-            <systemPath>${basedir}/Dependencies/ReportPlus.jar</systemPath>
+            <systemPath>${basedir}/Dependencies/ReportPlus v6.2.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>litebans</groupId>
+            <artifactId>api</artifactId>
+            <version>0.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/Dependencies/LiteBansAPI.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>

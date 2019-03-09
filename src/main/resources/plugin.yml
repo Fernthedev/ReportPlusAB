@@ -2,4 +2,5 @@ name: ReportPlusAB
 version: 1.0
 main: com.github.fernthedev.spigot.ReportPlusAB
 author: FernTheDev
-depend: [ReportPlus, AdvancedBan]
+depend: [ReportPlus]
+softdepend: [AdvancedBan, LiteBans]
