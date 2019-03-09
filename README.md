@@ -3,7 +3,8 @@ This addon is for the spigot resource made by xBones (https://www.spigotmc.org/r
 # Download
 This is supported 1.12+ No guarantees below
 This requires reportplus v6.2+
-https://www.dropbox.com/s/s0icwmnqrdfcjmh/reportplusab-1.0-SNAPSHOT.jar?dl=0
+Check releases tab for version number
+https://github.com/Fernthedev/ReportPlusAB/releases/download/1.2/reportplusab-1.0-SNAPSHOT.jar
 
 # Installation
 To install this plugin install it on all your spigot servers, however if advancedban is installed on bungee this will not work. This limitation is being worked on and will most likely be removed later on.You must also have punishment-broadcast in your reportplus config configured correctly.
