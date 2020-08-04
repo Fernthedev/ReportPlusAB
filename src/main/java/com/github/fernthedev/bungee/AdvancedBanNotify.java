@@ -1,9 +1,9 @@
 package com.github.fernthedev.bungee;
 
 import me.leoko.advancedban.bungee.event.PunishmentEvent;
-import me.xbones.reportplus.bungee.ReportPlus;
-import me.xbones.reportplus.bungee.punishments.Punishment;
-import me.xbones.reportplus.bungee.punishments.PunishmentType;
+import me.xbones.reportplus.api.ReportPlusAPI;
+import me.xbones.reportplus.api.punishments.Punishment;
+import me.xbones.reportplus.api.punishments.PunishmentType;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
@@ -22,15 +22,9 @@ public class AdvancedBanNotify implements Listener {
         PunishmentType type;
         switch (punish.getType()) {
             case BAN:
-                type = PunishmentType.BAN;
-                break;
-            case IP_BAN:
-                type = PunishmentType.BAN;
-                break;
-            case TEMP_BAN:
-                type = PunishmentType.BAN;
-                break;
             case TEMP_IP_BAN:
+            case TEMP_BAN:
+            case IP_BAN:
                 type = PunishmentType.BAN;
                 break;
             case KICK:
@@ -43,11 +37,7 @@ public class AdvancedBanNotify implements Listener {
                 type = PunishmentType.TEMPMUTE;
                 break;
             case WARNING:
-                type = PunishmentType.WARN;
-                break;
             case TEMP_WARNING:
-                type = PunishmentType.WARN;
-                break;
             default:
                 type = PunishmentType.WARN;
                 break;
@@ -68,9 +58,9 @@ public class AdvancedBanNotify implements Listener {
         }*/
 
 
-        Punishment punishment = new Punishment(punisher, punished, reason, type,null);
+        Punishment punishment = new Punishment(punisher, punished, reason, type);
 
-        ReportPlus.getAPI().sendMessageToAllServers(punishment);
+        ReportPlusAPI.getApi().sendPunishment(punishment);
         ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + type.name());
     }
 }

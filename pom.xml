@@ -22,6 +22,11 @@
             <id>destroystokyo-repo</id>
             <url>https://repo.destroystokyo.com/repository/maven-public//</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -77,19 +82,18 @@
             <systemPath>${basedir}/Dependencies/Advancedban.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>me.xbones.reportplus</groupId>
-            <artifactId>reportplus</artifactId>
-            <version>LATEST</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/Dependencies/ReportPlus v6.2.jar</systemPath>
+            <groupId>com.github.Fernthedev.ReportPlus</groupId>
+            <artifactId>reportplus-api</artifactId>
+            <version>7.5-pre3</version>
         </dependency>
         <dependency>
-            <groupId>litebans</groupId>
-            <artifactId>api</artifactId>
-            <version>0.3</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/Dependencies/LiteBansAPI.jar</systemPath>
+            <groupId>com.gitlab.ruany</groupId>
+            <artifactId>LiteBansAPI</artifactId>
+            <version>0.3.4</version>
+            <scope>provided</scope>
         </dependency>
+
+
 
     </dependencies>
 

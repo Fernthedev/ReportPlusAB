@@ -2,9 +2,9 @@ package com.github.fernthedev.bungee;
 
 import litebans.api.Entry;
 import litebans.api.Events;
-import me.xbones.reportplus.bungee.ReportPlus;
-import me.xbones.reportplus.bungee.punishments.Punishment;
-import me.xbones.reportplus.bungee.punishments.PunishmentType;
+import me.xbones.reportplus.api.ReportPlusAPI;
+import me.xbones.reportplus.api.punishments.Punishment;
+import me.xbones.reportplus.api.punishments.PunishmentType;
 
 public class LitebansNotify extends Events.Listener {
 
@@ -44,9 +44,9 @@ public class LitebansNotify extends Events.Listener {
         }
 
         ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + type.name());
-        Punishment punishment = new Punishment(punisher, punished, reason, type,null);
+        Punishment punishment = new Punishment(punisher, punished, reason, type);
 
-        ReportPlus.getAPI().sendMessageToAllServers(punishment);
+        ReportPlusAPI.getApi().sendPunishment(punishment);
 
 
     }

@@ -2,9 +2,10 @@ package com.github.fernthedev.spigot;
 
 import litebans.api.Entry;
 import litebans.api.Events;
-import me.xbones.reportplus.spigot.ReportPlus;
-import me.xbones.reportplus.spigot.punishments.Punishment;
-import me.xbones.reportplus.spigot.punishments.PunishmentType;
+import me.xbones.reportplus.api.ReportPlusAPI;
+import me.xbones.reportplus.api.punishments.Punishment;
+import me.xbones.reportplus.api.punishments.PunishmentType;
+
 
 public class LitebansNotify extends Events.Listener {
 
@@ -46,7 +47,7 @@ public class LitebansNotify extends Events.Listener {
         ReportPlusAB.getInstance().getLogger().info("Punisher was " + punisher + " and punished " + punished + " for the reason " + reason + " and punishment was " + type.name());
         Punishment punishment = new Punishment(punisher, punished, reason, type);
 
-        ReportPlus.getApi().sendPunishment(punishment);
+        ReportPlusAPI.getApi().sendPunishment(punishment);
 
 
     }
