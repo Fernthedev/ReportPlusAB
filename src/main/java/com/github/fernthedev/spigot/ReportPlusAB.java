@@ -1,7 +1,6 @@
 package com.github.fernthedev.spigot;
 
 import com.github.fernthedev.Universal.EnabledClasses;
-import litebans.api.Events;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -40,7 +39,7 @@ public class ReportPlusAB extends JavaPlugin {
         }
 
         if (EnabledClasses.whichPunishment == EnabledClasses.WhichBan.LITEBANS) {
-            Events.get().register(new LitebansNotify());
+            EnabledClasses.registerLitebans(new LitebansNotify());
         }
     }
 
