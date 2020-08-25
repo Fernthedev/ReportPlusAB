@@ -1,6 +1,7 @@
 package com.github.fernthedev.bungee;
 
 import com.github.fernthedev.Universal.EnabledClasses;
+import com.github.fernthedev.Universal.LitebansClassLoader;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.plugin.Plugin;
 
@@ -29,7 +30,7 @@ public class ReportPlusAB extends Plugin {
         }
 
         if (EnabledClasses.whichPunishment == EnabledClasses.WhichBan.LITEBANS) {
-            EnabledClasses.registerLitebans(new LitebansNotify());
+            LitebansClassLoader.registerLitebans(new LitebansNotify());
         }
 
         if(EnabledClasses.whichPunishment ==  EnabledClasses.WhichBan.ADVANCEDBAN) {
