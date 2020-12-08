@@ -1,5 +1,6 @@
 name: ReportPlusAB
-version: 1.0
+version: "1.0"
+api-version: 1.16
 main: com.github.fernthedev.spigot.ReportPlusAB
 author: FernTheDev
 depend: [ReportPlus]
